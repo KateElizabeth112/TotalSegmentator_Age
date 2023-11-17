@@ -14,7 +14,7 @@ parser.add_argument("-l", "--local", default=False, help="are we running locally
 args = vars(parser.parse_args())
 
 # set up variables
-local = True
+local = False
 
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"
@@ -45,10 +45,10 @@ def create():
         if not ("s" + id in patients_all):
             print("subject {} not found in metadata".format(id))
 
-        age.append(age_all[patients_all == "s" + id])
-        genders.append(genders_all[patients_all == "s" + id])
-        institute.append(institute_all[patients_all == "s" + id])
-        study_type.append(study_type_all[patients_all == "s" + id])
+        age.append(age_all[patients_all == "s" + id][0])
+        genders.append(genders_all[patients_all == "s" + id][0])
+        institute.append(institute_all[patients_all == "s" + id][0])
+        study_type.append(study_type_all[patients_all == "s" + id][0])
 
     # Save lists
     info = {"patients": patients,
@@ -76,8 +76,8 @@ def explore():
 
 
 def main():
-    #create()
-    explore()
+    create()
+    #explore()
 
 
 if __name__ == "__main__":
