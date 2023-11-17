@@ -10,7 +10,7 @@ local = False
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"
 else:
-    root_folder = "/rds/general/user/kc2322/home/data/TotalSegmentator/"
+    root_folder = "/rds/general/user/kc2322/projects/cevora_phd/live/TotalSegmentator"
 
 input_folder = os.path.join(root_folder, "nnUNet_raw/Dataset300_Full")
 output_folder = os.path.join(root_folder, "nnUNet_raw")
