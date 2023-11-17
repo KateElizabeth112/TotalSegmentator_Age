@@ -18,11 +18,9 @@ input_images_folder = os.path.join(input_folder, "imagesTr")
 input_labels_folder = os.path.join(input_folder, "labelsTr")
 splits_folder = os.path.join(root_folder, "splits")
 
-output_datasets = ["Dataset501", "Dataset502", "Dataset503"]
-
 
 def generate_folds():
-    f = open(os.path.join(input_folder, "info.pkl"), "rb")
+    f = open(os.path.join(root_folder, "info.pkl"), "rb")
     info = pkl.load(f)
     f.close()
 
@@ -145,13 +143,13 @@ def copy_images(dataset_name, ids_tr, ids_ts):
 
 
 def main():
-    #generate_folds()
+    generate_folds()
 
     # Sort the case IDs according to the sets
-    folds = [2, 3, 4]
+    folds = [0, 1, 2, 3, 4]
 
     for fold in folds:
-        f = open(os.path.join(splits_folder, "fold_{}.pkl".format(fold)), "rb")
+        f = open(os.path.join(splits_folder, "fold_{}_age.pkl".format(fold)), "rb")
         ids = pkl.load(f)
         f.close()
 
@@ -159,7 +157,7 @@ def main():
             ids_tr = ids[j]["train"]
             ids_ts = ids[j]["test"]
 
-            name = output_datasets[j] + "_Fold{}".format(fold)
+            name = "Dataset{}0{}".format(5 + fold, j) + "_Age{}".format(fold)
 
             print("Working on Set {}....".format(name))
             copy_images(name, ids_tr, ids_ts)

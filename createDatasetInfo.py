@@ -14,7 +14,7 @@ parser.add_argument("-l", "--local", default=False, help="are we running locally
 args = vars(parser.parse_args())
 
 # set up variables
-local = False
+local = True
 
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"
@@ -76,8 +76,8 @@ def explore():
 
 
 def main():
-    create()
-    #explore()
+    #create()
+    explore()
 
 
 if __name__ == "__main__":
