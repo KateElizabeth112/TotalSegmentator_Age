@@ -5,7 +5,7 @@ import os
 import pickle as pkl
 import shutil
 
-local = False
+local = True
 
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"

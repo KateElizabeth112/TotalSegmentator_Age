@@ -45,17 +45,18 @@ def create():
         if not ("s" + id in patients_all):
             print("subject {} not found in metadata".format(id))
 
+        patients.append(id)
         age.append(age_all[patients_all == "s" + id][0])
         genders.append(genders_all[patients_all == "s" + id][0])
         institute.append(institute_all[patients_all == "s" + id][0])
         study_type.append(study_type_all[patients_all == "s" + id][0])
 
     # Save lists
-    info = {"patients": patients,
-            "genders": genders,
-            "age": age,
-            "institute": institute,
-            "study_type": study_type}
+    info = {"patients": np.array(patients),
+            "genders": np.array(genders),
+            "age": np.array(age),
+            "institute": np.array(institute),
+            "study_type": np.array(study_type)}
 
     f = open(os.path.join(root_folder, "info.pkl"), "wb")
     pkl.dump(info, f)
