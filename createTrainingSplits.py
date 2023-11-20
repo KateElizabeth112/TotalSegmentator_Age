@@ -28,8 +28,8 @@ def generate_folds():
     age = info["age"]
 
     # split into group 1 and group 2
-    ids_g1 = patients[age <= 40]
-    ids_g2 = patients[age >= 65]
+    ids_g1 = patients[age <= 50]
+    ids_g2 = patients[age >= 70]
 
     # randomly shuffle indices
     np.random.shuffle(ids_g1)
