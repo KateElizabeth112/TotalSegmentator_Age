@@ -14,7 +14,7 @@ parser.add_argument("-l", "--local", default=False, help="are we running locally
 args = vars(parser.parse_args())
 
 # set up variables
-local = False
+local = True
 
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"
@@ -50,6 +50,11 @@ def create():
         genders.append(genders_all[patients_all == "s" + id][0])
         institute.append(institute_all[patients_all == "s" + id][0])
         study_type.append(study_type_all[patients_all == "s" + id][0])
+
+    # convert genders to a binary variable
+    genders = np.array(genders)
+    sex = np.zeros(genders.shape[0])
+    sex[genders == "f"] = 1
 
     # Save lists
     info = {"id": np.array(patients),
