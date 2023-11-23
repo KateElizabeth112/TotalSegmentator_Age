@@ -24,7 +24,7 @@ fold = "all"
 
 preds_dir = os.path.join(root_dir, "inference", task, fold)
 gt_dir = os.path.join(root_dir, "nnUNet_raw", task, "labelsTs")
-meta_data_path = os.path.join(root_dir, "metadata.pkl")
+meta_data_path = os.path.join(root_dir, "info.pkl")
 
 labels = {"background": 0,
           "kidney": 1,
