@@ -52,8 +52,8 @@ def create():
         study_type.append(study_type_all[patients_all == "s" + id][0])
 
     # Save lists
-    info = {"patients": np.array(patients),
-            "genders": np.array(genders),
+    info = {"id": np.array(patients),
+            "sex": np.array(genders),
             "age": np.array(age),
             "institute": np.array(institute),
             "study_type": np.array(study_type)}

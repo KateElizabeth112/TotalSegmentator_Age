@@ -98,9 +98,9 @@ def calculateMetrics():
     info = pkl.load(f)
     f.close()
 
-    patients = np.array(info["id"])
-    genders = np.array(info["gender"])       # male = 0, female = 1
-    ages = np.array(info["age"])
+    patients = info["id"]
+    genders = info["sex"]     # male = 0, female = 1
+    ages = info["age"]
 
     # containers to store results
     case_id = []
