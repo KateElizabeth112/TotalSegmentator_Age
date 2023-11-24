@@ -148,6 +148,7 @@ def calculateMetrics():
     vol_preds = np.array(vol_preds)
     vol_gts = np.array(vol_gts)
 
+    print(sex)
     print("Number of men: {}".format(sex.shape[0] - np.sum(sex)))
     print("Number of women: {}".format(np.sum(sex)))
 
