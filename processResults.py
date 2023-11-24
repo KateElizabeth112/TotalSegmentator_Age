@@ -102,6 +102,8 @@ def calculateMetrics():
     genders = info["sex"]     # male = 0, female = 1
     ages = info["age"]
 
+    print(genders)
+
     # containers to store results
     case_id = []
     sex = []
@@ -112,6 +114,7 @@ def calculateMetrics():
     vol_gts = []
 
     cases = os.listdir(preds_dir)
+
     for case in cases:
         if case.endswith(".nii.gz"):
             id = case[5:9]
@@ -130,8 +133,9 @@ def calculateMetrics():
 
             if id in patients:
                 case_id.append(id)
+                print(genders[cases == id])
                 sex.append(genders[cases == id])
-                age.append(ages[case == id])
+                age.append(ages[cases == id])
                 dice_scores.append(dice)
                 hausdorff.append(hd.numpy().squeeze())
                 vol_preds.append(vol_pred)
