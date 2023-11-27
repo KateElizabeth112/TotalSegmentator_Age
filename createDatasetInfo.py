@@ -14,7 +14,7 @@ parser.add_argument("-l", "--local", default=False, help="are we running locally
 args = vars(parser.parse_args())
 
 # set up variables
-local = True
+local = False
 
 if local:
     root_folder = "/Users/katecevora/Documents/PhD/data/TotalSegmentator"
