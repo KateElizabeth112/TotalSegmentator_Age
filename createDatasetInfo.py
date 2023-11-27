@@ -58,7 +58,7 @@ def create():
 
     # Save lists
     info = {"id": np.array(patients),
-            "sex": np.array(genders),
+            "sex": np.array(sex),
             "age": np.array(age),
             "institute": np.array(institute),
             "study_type": np.array(study_type)}
