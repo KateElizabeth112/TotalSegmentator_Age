@@ -27,8 +27,10 @@ gt_dir = os.path.join(root_dir, "nnUNet_raw", task, "labelsTs")
 meta_data_path = os.path.join(root_dir, "info.pkl")
 
 labels = {"background": 0,
-          "kidney": 1,
-          "tumor": 2}
+          "right kidney": 1,
+          "left kidney": 2,
+          "liver": 3,
+          "pancreas": 4}
 
 n_channels = int(len(labels))
 
