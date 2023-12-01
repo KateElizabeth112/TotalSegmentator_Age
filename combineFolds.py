@@ -30,6 +30,8 @@ def main():
             results = pkl.load(f)
             f.close()
 
+            print(results["dice"].shape)
+
             case_id_all.append(list(results["case_id"]))
             sex_all.append(list(results["sex"]))
             age_all.append(list(results["age"]))
@@ -37,6 +39,8 @@ def main():
             hd_all.append(results["hd"])
             vol_pred_all.append(list(results["vol_pred"]))
             vol_gt_all.append(list(results["vol_gt"]))
+
+        print(np.array(dice_all).shape)
 
         f = open(os.path.join(root_dir, "inference", "results_age_{}.pkl".format(ex)), 'wb')
         pkl.dump({"case_id": np.array(case_id_all),
